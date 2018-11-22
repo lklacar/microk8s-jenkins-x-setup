@@ -32,6 +32,13 @@ kubectl get all --all-namespaces
 # jx install --provider=kubernetes --skip-ingress --external-ip=<IP> --domain=devlab.rs
 ```
 
+```bash
+jx install --provider=kubernetes --external-ip 192.168.0.14 \
+--ingress-service=default-http-backend \
+--ingress-deployment=default-http-backend \
+--ingress-namespace=default
+```
+
 - Create StorageClass
 ```yaml
 apiVersion: storage.k8s.io/v1
