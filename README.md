@@ -6,7 +6,7 @@
 sudo snap install microk8s --classic
 
 # Enable microk8s features
-microk8s.enable dns storage
+microk8s.enable dns storage ingress
 
 # Install jx
 mkdir -p ~/.jx/bin
