@@ -28,9 +28,27 @@ microk8s.config > ~/.kube/config
 kubectl get all --all-namespaces
 
 # Install Jenkins X on microk8s cluster
-jx install --provider=kubernetes --on-premise
-#jx install --provider=kubernetes --skip-ingress --external-ip=<IP> --domain=devlab.rs
+# jx install --provider=kubernetes --on-premise
+# jx install --provider=kubernetes --skip-ingress --external-ip=<IP> --domain=devlab.rs
 ```
+
+- Create StorageClass
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-ssd
+```
+
+```bash
+kubectl create -f storage.yaml
+jx install --provider=kubernetes --external-ip=<IP> --domain=devlab.rs --on-premise
+```
+
+
 
 - Remove microk8s
 ```bash
