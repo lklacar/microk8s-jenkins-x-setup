@@ -1,4 +1,6 @@
 # microk8s-jenkins-x-setup
+
+- Installation
 ```bash
 # Install microk8s
 sudo snap install microk8s --classic
@@ -32,7 +34,7 @@ microk8s.reset
 sudo snap remove microk8s
 ```
 
-- Util 
+- Useful commands. No need to run these during the installation.
 
 ```bash 
 # alias microk8s kubectl - DON'T DO THIS
