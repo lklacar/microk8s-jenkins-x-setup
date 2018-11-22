@@ -42,7 +42,4 @@ sudo snap remove microk8s
 ```bash 
 # alias microk8s kubectl - DON'T DO THIS
 sudo snap alias microk8s.kubectl kubectl
-
-# If neededm, but jenkins x should create everything
-microk8s.enable dns dashboard storage ingress
 ```
