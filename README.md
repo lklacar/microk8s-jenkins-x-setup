@@ -44,3 +44,5 @@ sudo snap remove microk8s
 # alias microk8s kubectl - DON'T DO THIS
 sudo snap alias microk8s.kubectl kubectl
 ```
+
+[Jenkins X Docs](https://jenkins-x.io/getting-started/install-on-cluster/#installing-jenkins-x-on-premise)
