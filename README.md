@@ -29,6 +29,7 @@ kubectl get all --all-namespaces
 
 # Install Jenkins X on microk8s cluster
 jx install --provider=kubernetes --on-premise
+#jx install --provider=kubernetes --skip-ingress --external-ip=<IP> --domain=devlab.rs
 ```
 
 - Remove microk8s
