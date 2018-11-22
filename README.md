@@ -5,6 +5,9 @@
 # Install microk8s
 sudo snap install microk8s --classic
 
+# Enable microk8s features
+microk8s.enable dns storage
+
 # Install jx
 mkdir -p ~/.jx/bin
 curl -L https://github.com/jenkins-x/jx/releases/download/v1.3.585/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
