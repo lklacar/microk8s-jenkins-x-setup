@@ -33,10 +33,12 @@ kubectl get all --all-namespaces
 ```
 
 ```bash
-jx install --provider=kubernetes --external-ip 192.168.0.14 \
+jx install --provider=kubernetes --external-ip <IP> \
 --ingress-service=default-http-backend \
 --ingress-deployment=default-http-backend \
---ingress-namespace=default
+--ingress-namespace=default \
+--on-premise \
+--domain=devlab.rs
 ```
 
 - Create StorageClass
