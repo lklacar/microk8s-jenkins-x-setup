@@ -14,7 +14,7 @@ curl -L https://github.com/jenkins-x/jx/releases/download/v1.3.566/jx-linux-amd6
 export PATH=$PATH:~/.jx/bin
 echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
 
-# Install kubectl, because microk8s.kubectl uses wrokg kube config.
+# Install kubectl, because microk8s.kubectl uses wrong kube config or you can just use kubectl on your local machine, not a cluster.
 sudo apt-get update && sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
@@ -26,19 +26,6 @@ microk8s.config > ~/.kube/config
 
 # Check if kubectl works
 kubectl get all --all-namespaces
-
-# Install Jenkins X on microk8s cluster
-# jx install --provider=kubernetes --on-premise
-# jx install --provider=kubernetes --skip-ingress --external-ip=<IP> --domain=devlab.rs
-```
-
-```bash
-jx install --provider=kubernetes --external-ip <IP> \
---ingress-service=default-http-backend \
---ingress-deployment=default-http-backend \
---ingress-namespace=default \
---on-premise \
---domain=devlab.rs
 ```
 
 - Create StorageClass
@@ -58,6 +45,15 @@ jx install --provider=kubernetes --external-ip=<IP> --domain=devlab.rs --on-prem
 ```
 ```bash
 sudo iptables -P FORWARD ACCEPT
+```
+
+```bash
+jx install --provider=kubernetes --external-ip <IP> \
+--ingress-service=default-http-backend \
+--ingress-deployment=default-http-backend \
+--ingress-namespace=default \
+--on-premise \
+--domain=devlab.rs
 ```
 
 
