@@ -41,7 +41,6 @@ parameters:
 
 ```bash
 kubectl create -f storage.yaml
-jx install --provider=kubernetes --external-ip=<IP> --domain=devlab.rs --on-premise
 ```
 ```bash
 sudo iptables -P FORWARD ACCEPT
