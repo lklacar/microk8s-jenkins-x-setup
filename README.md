@@ -3,7 +3,7 @@
 - Installation
 ```bash
 # Install microk8s
-sudo snap install microk8s --classic
+sudo snap install microk8s --edge --classic
 
 # Enable microk8s features
 microk8s.enable dns storage ingress
